@@ -1,0 +1,26 @@
+:root { --bg:#fff; --fg:#1c1f24; --muted:#5d6470; --border:#e3e5e9; --accent:#2563eb; --soft:rgba(37,99,235,.1); --ok:#16a34a; --danger:#dc2626; color-scheme: light dark; }
+@media (prefers-color-scheme: dark) { :root { --bg:#1c1f25; --fg:#e8eaee; --muted:#a6adba; --border:#2b2f37; --accent:#4f8cf7; --soft:rgba(79,140,247,.15); --ok:#34d399; --danger:#f87171; } }
+* { box-sizing: border-box; }
+body { width: 360px; margin: 0; padding: 14px; background: var(--bg); color: var(--fg); font: 13px/1.4 -apple-system, 'Segoe UI', Roboto, sans-serif; }
+header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+header strong { flex: 1; font-size: 14px; }
+.status { font-size: 11.5px; padding: 2px 8px; border-radius: 999px; background: var(--soft); }
+.status.ok { color: var(--ok); } .status.off { color: var(--danger); }
+.callout { padding: 9px 11px; border-radius: 8px; background: var(--soft); margin-bottom: 10px; font-size: 12.5px; }
+h3 { font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 14px 0 6px; }
+ul { list-style: none; margin: 0; padding: 0; max-height: 260px; overflow: auto; }
+li { display: flex; align-items: center; gap: 8px; padding: 7px 0; border-bottom: 1px solid var(--border); }
+li .info { flex: 1; min-width: 0; }
+li .name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; }
+li .meta { font-size: 11px; color: var(--muted); }
+.muted { color: var(--muted); }
+button { font: inherit; border: 1px solid var(--accent); background: var(--accent); color: #fff; border-radius: 7px; padding: 5px 10px; cursor: pointer; white-space: nowrap; }
+button:disabled { opacity: .5; cursor: default; }
+footer { margin-top: 12px; display: flex; justify-content: flex-end; }
+footer button { background: transparent; color: var(--accent); }
+.toggle { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+.toggle input { position: absolute; opacity: 0; }
+.track { position: relative; width: 32px; height: 18px; border-radius: 9px; background: #9aa0aa; transition: .15s; }
+.thumb { position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; border-radius: 50%; background: #fff; transition: .15s; }
+.toggle input:checked + .track { background: var(--accent); }
+.toggle input:checked + .track .thumb { transform: translateX(14px); }

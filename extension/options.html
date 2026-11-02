@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="popup.css" />
+    <style>body { width: auto; max-width: 520px; } label { display: block; font-weight: 600; margin: 12px 0 6px; } input[type=number] { width: 140px; padding: 6px 8px; border-radius: 7px; border: 1px solid var(--border); background: transparent; color: var(--fg); font: inherit; } p { color: var(--muted); }</style>
+  </head>
+  <body>
+    <h2 data-i18n="optionsTitle"></h2>
+    <label for="port" data-i18n="optionsPort"></label>
+    <input id="port" type="number" min="1024" max="65535" placeholder="53771" />
+    <p data-i18n="optionsPortHelp"></p>
+    <p data-i18n="optionsMore"></p>
+    <button id="save" data-i18n="save"></button> <span id="saved" class="muted"></span>
+    <script src="options.js"></script>
+  </body>
+</html>

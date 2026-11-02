@@ -1,0 +1,65 @@
+# Tek kod tabanından Windows ve macOS paketleri üretir.
+#   npm run dist:mac  -> release/*.dmg, *.zip (Apple Silicon + Intel)
+#   npm run dist:win  -> release/*-Setup.exe (kurulum) ve *-Portable.exe
+appId: com.tngokce.downloadmanager
+productName: Download Manager
+copyright: Copyright © 2026 Tunahan Gökçe
+directories:
+  output: release
+  buildResources: resources
+files:
+  - out/**
+  - package.json
+extraResources:
+  - from: extension
+    to: extension
+  - from: resources
+    to: resources
+    filter: ['*.png']
+asar: true
+protocols:
+  - name: Download Manager
+    schemes: [dlmanager]
+
+mac:
+  category: public.app-category.utilities
+  icon: resources/icon.png
+  target:
+    - target: dmg
+      arch: [arm64, x64]
+    - target: zip
+      arch: [arm64, x64]
+  artifactName: ${productName}-${version}-mac-${arch}.${ext}
+  hardenedRuntime: true
+  entitlements: resources/entitlements.mac.plist
+  entitlementsInherit: resources/entitlements.mac.plist
+  # İmza sertifikası varsa CSC_LINK / CSC_KEY_PASSWORD ortam değişkenleriyle otomatik imzalanır.
+dmg:
+  title: ${productName} ${version}
+  window:
+    width: 540
+    height: 380
+
+win:
+  icon: resources/icon.png
+  target:
+    - target: nsis
+      arch: [x64, arm64]
+    - target: portable
+      arch: [x64]
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Download Manager
+  artifactName: ${productName}-${version}-Setup-${arch}.${ext}
+  deleteAppDataOnUninstall: false
+portable:
+  artifactName: ${productName}-${version}-Portable.${ext}
+
+linux:
+  icon: resources/icon.png
+  category: Network
+  target: [AppImage, deb]
