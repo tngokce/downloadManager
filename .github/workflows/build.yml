@@ -41,6 +41,11 @@ jobs:
       - name: Paketle
         shell: bash
         run: |
+          # Sertifika secret'ı yoksa değişkenler boş kalır; boş CSC_LINK electron-builder'ı bozduğu için kaldırılır.
+          if [ "$HAS_CERT" != "true" ]; then
+            unset CSC_LINK CSC_KEY_PASSWORD
+            export CSC_IDENTITY_AUTO_DISCOVERY=false
+          fi
           # Sertifika yoksa macOS paketi ad-hoc imzalanır; aksi halde Apple Silicon'da "hasarlı" uyarısı çıkar.
           if [ "$RUNNER_OS" = "macOS" ]; then
             if [ "$HAS_CERT" = "true" ]; then
