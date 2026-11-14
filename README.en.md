@@ -54,6 +54,7 @@ Download the right file from the **Assets** section of the **[latest release](ht
 | --- | --- |
 | Windows (most PCs) | `Gokce-Download-Manager-X.Y.Z-Setup-x64.exe` |
 | Windows on ARM | `Gokce-Download-Manager-X.Y.Z-Setup-arm64.exe` |
+| Windows, not sure which (contains both, larger) | `Gokce-Download-Manager-X.Y.Z-Setup.exe` |
 | Windows, no installation | `Gokce-Download-Manager-X.Y.Z-Portable.exe` |
 | Mac with Apple Silicon (M1–M4) | `Gokce-Download-Manager-X.Y.Z-mac-arm64.dmg` |
 | Mac with Intel | `Gokce-Download-Manager-X.Y.Z-mac-x64.dmg` |

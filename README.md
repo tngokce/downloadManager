@@ -135,6 +135,7 @@ Tüm kurulum dosyaları **[Releases (Sürümler) sayfasında](https://github.com
 | --- | --- |
 | Windows (çoğu bilgisayar) | `Gokce-Download-Manager-X.Y.Z-Setup-x64.exe` |
 | Windows (ARM işlemci, ör. Surface Pro X / Snapdragon) | `Gokce-Download-Manager-X.Y.Z-Setup-arm64.exe` |
+| Windows, işlemcinizden emin değilseniz (her ikisini içerir, daha büyük) | `Gokce-Download-Manager-X.Y.Z-Setup.exe` |
 | Windows, kurulum yapmadan kullanmak için | `Gokce-Download-Manager-X.Y.Z-Portable.exe` |
 | Mac, Apple Silicon (M1, M2, M3, M4…) | `Gokce-Download-Manager-X.Y.Z-mac-arm64.dmg` |
 | Mac, Intel işlemci | `Gokce-Download-Manager-X.Y.Z-mac-x64.dmg` |
