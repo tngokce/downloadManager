@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🔒 Güvenlik açığı bildir / Report a vulnerability
+    url: https://github.com/tngokce/downloadManager/security/advisories/new
+    about: Güvenlik açıklarını lütfen gizli olarak bildirin.
+  - name: 📖 Kurulum ve kullanım rehberi / Installation guide
+    url: https://github.com/tngokce/downloadManager#readme
+    about: Sık sorulan sorular ve sorun giderme README'de.

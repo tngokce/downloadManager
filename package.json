@@ -1,13 +1,34 @@
 {
-  "name": "download-manager",
-  "productName": "Download Manager",
+  "name": "gokce-download-manager",
+  "productName": "Gökçe Download Manager",
   "version": "1.0.0",
-  "description": "Çok bağlantılı, kaldığı yerden devam eden, tarayıcı entegrasyonlu masaüstü indirme yöneticisi (Windows + macOS)",
-  "author": "Tunahan Gökçe <tunahanngokce@gmail.com>",
+  "description": "Gökçe Download Manager — çok bağlantılı, kaldığı yerden devam eden, tarayıcı entegrasyonlu masaüstü indirme yöneticisi (Windows + macOS)",
+  "author": {
+    "name": "Tunahan Gökçe",
+    "url": "https://github.com/tngokce"
+  },
   "license": "MIT",
   "private": true,
   "main": "./out/main/index.js",
-  "homepage": "https://github.com/tngokce/downloadManager",
+  "homepage": "https://github.com/tngokce/downloadManager#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tngokce/downloadManager.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tngokce/downloadManager/issues"
+  },
+  "keywords": [
+    "download-manager",
+    "downloader",
+    "electron",
+    "multi-connection",
+    "resume",
+    "hls",
+    "browser-extension",
+    "windows",
+    "macos"
+  ],
   "scripts": {
     "dev": "electron-vite dev",
     "start": "electron-vite preview",
@@ -18,7 +39,7 @@
     "icons": "electron scripts/make-icons.mjs",
     "extension": "node scripts/build-extension.mjs",
     "dist": "npm run build && electron-builder",
-    "dist:mac": "npm run build && electron-builder --mac",
+    "dist:mac": "npm run build && electron-builder --mac -c.productName=\"Gokce Download Manager\" -c.mac.extendInfo.CFBundleDisplayName=\"Gökçe Download Manager\"",
     "dist:win": "npm run build && electron-builder --win",
     "postinstall": "electron-builder install-app-deps"
   },

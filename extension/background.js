@@ -1,4 +1,4 @@
-// Download Manager tarayıcı eklentisi — arka plan betiği (Chrome MV3 service worker / Firefox background script)
+// Gökçe Download Manager tarayıcı eklentisi — arka plan betiği (Chrome MV3 service worker / Firefox background script)
 'use strict'
 
 const api = globalThis.browser ?? globalThis.chrome

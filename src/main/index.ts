@@ -15,6 +15,7 @@ import {
   type MenuItemConstructorOptions
 } from 'electron'
 import { randomUUID } from 'node:crypto'
+import { cpSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 import type { AddRequest, AppState, DownloadItem, PendingAdd, PendingBatch, PostAction, Queue, Settings } from '@shared/types'
 import { DEFAULT_QUEUES, MAIN_QUEUE_ID, createDefaultSettings, mergeSettings } from '@shared/defaults'
@@ -613,6 +614,25 @@ export class Controller {
 
 // Test/duman testi için: ayrı veri klasörü ve otomatik ekran görüntüsü
 if (process.env.DM_USER_DATA) app.setPath('userData', process.env.DM_USER_DATA)
+else migrateLegacyUserData()
+
+/**
+ * Uygulamanın eski adı "Download Manager" idi; veri klasörü adla birlikte değişti.
+ * Yeni klasör henüz boşsa eski klasördeki liste ve ayarlar bir kez kopyalanır (eski klasör silinmez).
+ */
+function migrateLegacyUserData(): void {
+  try {
+    const current = app.getPath('userData')
+    const legacy = join(app.getPath('appData'), 'Download Manager')
+    if (legacy === current || !existsSync(legacy) || existsSync(join(current, 'settings.json'))) return
+    for (const file of ['downloads.json', 'settings.json', 'queues.json', 'window.json']) {
+      const from = join(legacy, file)
+      if (existsSync(from)) cpSync(from, join(current, file), { force: false })
+    }
+  } catch {
+    /* taşıma başarısız olsa da uygulama varsayılan ayarlarla açılır */
+  }
+}
 
 if (!app.requestSingleInstanceLock()) {
   app.quit()

@@ -1,7 +1,7 @@
 import type { Language } from './types'
 
 const tr = {
-  appName: 'Download Manager',
+  appName: 'Gökçe Download Manager',
   // araç çubuğu
   addUrl: 'Adres Ekle',
   batch: 'Toplu İndir',
@@ -261,7 +261,7 @@ const tr = {
 export type I18nKey = keyof typeof tr
 
 const en: Record<I18nKey, string> = {
-  appName: 'Download Manager',
+  appName: 'Gökçe Download Manager',
   addUrl: 'Add URL',
   batch: 'Batch',
   resume: 'Resume',

@@ -1,0 +1,55 @@
+name: 🐞 Hata bildirimi / Bug report
+description: Bir şey beklendiği gibi çalışmıyor
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Bildiriminiz için teşekkürler! Lütfen **çerez, şifre, oturum bilgisi içeren bağlantılar veya kişisel dosya yolları paylaşmayın.**
+        Güvenlik açıklarını burada değil, [SECURITY.md](https://github.com/tngokce/downloadManager/blob/main/SECURITY.md) üzerinden bildirin.
+  - type: textarea
+    id: what
+    attributes:
+      label: Ne oldu? / What happened?
+      description: Beklediğiniz davranış ve gerçekleşen davranış
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Tekrarlama adımları / Steps to reproduce
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Uygulama sürümü / App version
+      description: Ayarlar → Gelişmiş bölümünün altında yazar
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: İşletim sistemi / OS
+      options:
+        - Windows 11
+        - Windows 10
+        - macOS (Apple Silicon)
+        - macOS (Intel)
+        - Diğer / Other
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Tarayıcı ve sürümü (eklentiyle ilgiliyse) / Browser
+      placeholder: "Chrome 131"
+  - type: textarea
+    id: logs
+    attributes:
+      label: Hata mesajı veya ekran görüntüsü / Error message or screenshot

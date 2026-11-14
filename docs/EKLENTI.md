@@ -34,7 +34,7 @@
 
 | Menü | Ne gönderir |
 | --- | --- |
-| Download Manager ile indir (bağlantı) | Bağlantı + sayfa çerezleri |
+| Gökçe Download Manager ile indir (bağlantı) | Bağlantı + sayfa çerezleri |
 | Bu medyayı indir (video/ses/resim) | Medya adresi; `blob:` ise algılanan akış |
 | Seçili bağlantıları indir | Seçimin içindeki tüm `<a>` bağlantıları → toplu indirme penceresi |
 | Sayfadaki tüm bağlantıları indir | Tüm çerçevelerdeki bağlantılar ve medya kaynakları → toplu indirme penceresi (uzantıya göre süzülebilir) |
@@ -53,7 +53,7 @@ Eklenti hiçbir veriyi internete göndermez. Tek iletişim, aynı bilgisayardaki
 
 ## Mağazada yayınlama
 
-`npm run extension` komutu `extension-dist/download-manager-chrome-X.zip` ve `...-firefox-X.zip` dosyalarını üretir:
+`npm run extension` komutu `extension-dist/gokce-download-manager-chrome-X.zip` ve `...-firefox-X.zip` dosyalarını üretir:
 
 - Chrome Web Store ve Edge Add-ons'a Chrome zip'i yüklenir.
 - Firefox Add-ons (AMO) sitesine Firefox zip'i yüklenir.

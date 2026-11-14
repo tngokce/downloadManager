@@ -18,7 +18,7 @@ downloadManager/
 │   ├── renderer/        React arayüzü
 │   └── shared/          Ortak tipler, varsayılanlar, dil dosyası
 ├── extension/           Tarayıcı eklentisi
-├── resources/           Simgeler (SVG kaynakları + üretilmiş PNG'ler)
+├── resources/           Logo (logo.png) ve ondan üretilen simgeler
 ├── scripts/             Simge ve eklenti paketleme betikleri
 ├── tests/               Vitest testleri
 ├── docs/                Belgeler
@@ -45,6 +45,20 @@ Testler gerçek bir yerel HTTP sunucusuna (`tests/helpers.ts`) karşı çalış�
 1. `src/shared/i18n.ts` dosyasına yeni bir sözlük ekleyin. TypeScript eksik anahtarları derleme sırasında yakalar.
 2. `Language` tipine ve Ayarlar → Genel'deki dil listesine ekleyin.
 3. Eklenti için `extension/_locales/<dil>/messages.json` dosyasını oluşturun.
+
+## Logo ve simgeler
+
+Tüm simgeler (uygulama, macOS menü çubuğu, Windows tepsisi, eklenti, README logosu) tek bir kaynaktan üretilir: `resources/logo.png`. Logoyu değiştirmek için bu dosyayı yenisiyle değiştirip şunu çalıştırın:
+
+```bash
+npm run icons
+```
+
+macOS menü çubuğu için koyu alanları siyah, açık alanları şeffaf bir "template" simge üretilir; macOS bunu açık/koyu temaya göre kendisi renklendirir.
+
+## Paket adları
+
+Uygulamanın adı **Gökçe Download Manager**'dır. macOS'ta `.app` paketinin adında Türkçe karakter olursa Electron açılışta çöktüğü için `npm run dist:mac` paketi `Gokce Download Manager.app` adıyla üretir; Dock'ta, menü çubuğunda ve uygulama içinde görünen ad yine "Gökçe Download Manager"dır. Bu yüzden Mac paketi için `npm run dist` yerine her zaman `npm run dist:mac` kullanın. İndirilen dosyaların adları da (`Gokce-Download-Manager-…`) bu nedenle ASCII'dir.
 
 ## Sürüm çıkarma
 

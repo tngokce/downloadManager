@@ -22,7 +22,7 @@ const variants = {
     const m = structuredClone(base)
     m.background = { scripts: ['background.js'] }
     delete m.minimum_chrome_version
-    m.browser_specific_settings = { gecko: { id: 'download-manager@tngokce', strict_min_version: '121.0' } }
+    m.browser_specific_settings = { gecko: { id: 'gokce-download-manager@tngokce', strict_min_version: '121.0' } }
     return m
   })()
 }
@@ -31,7 +31,7 @@ for (const [name, manifest] of Object.entries(variants)) {
   const dir = join(outDir, name)
   cpSync(src, dir, { recursive: true })
   writeFileSync(join(dir, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n')
-  const zip = join(outDir, `download-manager-${name}-${version}.zip`)
+  const zip = join(outDir, `gokce-download-manager-${name}-${version}.zip`)
   try {
     if (process.platform === 'win32') {
       execFileSync('powershell', ['-NoProfile', '-Command', `Compress-Archive -Path '${dir}\\*' -DestinationPath '${zip}' -Force`])
